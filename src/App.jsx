@@ -1,5 +1,12 @@
+import Router from './routes/Router';
+import AppLayout from './components/layout/AppLayout';
+
 function App() {
-  return <div className="bg-red-200">hihi</div>;
+  return (
+    <AppLayout>
+      <Router />
+    </AppLayout>
+  );
 }
 
 export default App;
