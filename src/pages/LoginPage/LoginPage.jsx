@@ -10,7 +10,7 @@ const LOGIN = [
   {
     source: googleIcon,
     title: '구글',
-    to: '/',
+    to: '/home',
   },
   {
     source: kakaoIcon,
