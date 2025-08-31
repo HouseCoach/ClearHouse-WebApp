@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import inactiveHomeIcon from '../../assets/layout/inactive/home.png';
 import inactiveChatIcon from '../../assets/layout/inactive/chat.png';
@@ -12,16 +13,19 @@ const TAP = [
     title: 'home',
     inactiveIcon: inactiveHomeIcon,
     activeIcon: activeHomeIcon,
+    to: '/home',
   },
   {
     title: 'chat',
     inactiveIcon: inactiveChatIcon,
     activeIcon: activePersonIcon,
+    to: '/chat',
   },
   {
     title: 'person',
     inactiveIcon: inactivePersonIcon,
     activeIcon: activePersonIcon,
+    to: '/my-page',
   },
 ];
 
@@ -30,8 +34,9 @@ export default function Footer() {
   return (
     <div className="w-full h-[91px] flex justify-between px-[53px] items-start pt-[16px] absolute bottom-0">
       {TAP.map((item, idx) => (
-        <button
+        <Link
           key={idx}
+          to={item.to}
           onClick={() => setOnClicked(item.title)}
           className=" h-[70px] flex "
         >
@@ -42,7 +47,7 @@ export default function Footer() {
             alt="icon"
             className="w-[24px] h-[24px]"
           />
-        </button>
+        </Link>
       ))}
     </div>
   );
