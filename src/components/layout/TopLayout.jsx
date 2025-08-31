@@ -4,13 +4,13 @@ import backIcon from '../../assets/back-icon.png';
 export default function TopLayout({ children }) {
   const navigate = useNavigate();
   return (
-    <div className="s w-full h-full pt-[17px]">
-      <div className="px-[18px] h-[28px]">
+    <div className="h-full pt-[56px]">
+      <div className="px-[18px] h-[28px] mb-[116px]">
         <button onClick={() => navigate(-1)}>
           <img src={backIcon} alt="backIcon" className="w-[28px] h-[28px]" />
         </button>
       </div>
-      <div className="w-full h-[calc(100vh-45px)]">{children}</div>
+      <div className="w-full">{children}</div>
     </div>
   );
 }

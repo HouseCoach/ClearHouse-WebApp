@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
-import TopLayout from '../components/layout/TopLayout';
+import TopLayout from '../../components/layout/TopLayout';
 
-import logo from '../assets/logo.png';
-import googleIcon from '../assets/login/google-logo.png';
-import kakaoIcon from '../assets/login/kakao-logo.png';
-import naverIcon from '../assets/login/naver-logo.png';
+import logo from '../../assets/logo.png';
+import googleIcon from '../../assets/login/google-logo.png';
+import kakaoIcon from '../../assets/login/kakao-logo.png';
+import naverIcon from '../../assets/login/naver-logo.png';
 
 const LOGIN = [
   {
@@ -27,11 +27,11 @@ export default function LoginPage() {
   return (
     <TopLayout>
       <div className="flex flex-col items-center w-full h-[85%] justify-center gap-[40px]">
-        <img src={logo} alt="logo" className="w-[150px] h-[150px]" />
+        <img src={logo} alt="logo" className="w-[150px] h-[145px]" />
         <div className="flex flex-col gap-[5px] items-center">
           {LOGIN.map((item) => (
             <Link
-              className="flex justify-center items-center gap-[15px] w-[325px] h-[60px] border-[2px] shadow-md border-[#1229A4] rounded-[16px]"
+              className="flex justify-center items-center gap-[15px] w-[325px] h-[60px] border-[2px] shadow-md border-primary rounded-[16px]"
               to={item.to}
             >
               <img
