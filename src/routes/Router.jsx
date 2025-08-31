@@ -3,6 +3,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import SplashPage from '../pages/SplashPage/SplashPage';
 // 로그인
 import LoginPage from '../pages/LoginPage/LoginPage';
+// 홈
+import HomePage from '../pages/HomePage/HomePage';
 
 export default function Router() {
   return (
@@ -10,6 +12,7 @@ export default function Router() {
       <Routes>
         <Route path="/" element={<SplashPage />} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/home" element={<HomePage />} />
       </Routes>
     </BrowserRouter>
   );
