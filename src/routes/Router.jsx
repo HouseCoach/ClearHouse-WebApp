@@ -5,6 +5,7 @@ import SplashPage from '../pages/SplashPage/SplashPage';
 import LoginPage from '../pages/LoginPage/LoginPage';
 // 홈
 import HomePage from '../pages/HomePage/HomePage';
+import MyPage from '../pages/MyPage/MyPage';
 
 export default function Router() {
   return (
@@ -13,6 +14,7 @@ export default function Router() {
         <Route path="/" element={<SplashPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/home" element={<HomePage />} />
+        <Route path="/my-page" element={<MyPage />} />
       </Routes>
     </BrowserRouter>
   );
