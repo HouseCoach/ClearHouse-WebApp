@@ -11,7 +11,7 @@ export default function TopLayout({ children, title, icon }) {
         </button>
         <h1 className="text-[20px]">{title}</h1>
         <button className="w-[29px] h-[20px]">
-          <img src={icon} alt="icon" className="w-[18px] h-[20px]" />
+          {icon && <img src={icon} alt="icon" className="w-[18px] h-[20px]" />}
         </button>
       </div>
       <div className="w-full">{children}</div>
