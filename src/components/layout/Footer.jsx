@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 import inactiveHomeIcon from '../../assets/layout/inactive/home.png';
 import inactiveChatIcon from '../../assets/layout/inactive/chat.png';
@@ -30,20 +29,17 @@ const TAP = [
 ];
 
 export default function Footer() {
-  const [onClicked, setOnClicked] = useState('home');
+  const location = useLocation();
   return (
     <div className="w-full h-[91px] flex justify-between px-[53px] items-start pt-[16px] absolute bottom-0">
       {TAP.map((item, idx) => (
-        <Link
-          key={idx}
-          to={item.to}
-          onClick={() => setOnClicked(item.title)}
-          className=" h-[70px] flex "
-        >
+        <Link key={idx} to={item.to} className=" h-[70px] flex ">
           <img
-            src={`${
-              onClicked === item.title ? item.activeIcon : item.inactiveIcon
-            }`}
+            src={
+              location.pathname === item.to
+                ? item.activeIcon
+                : item.inactiveIcon
+            }
             alt="icon"
             className="w-[24px] h-[24px]"
           />
