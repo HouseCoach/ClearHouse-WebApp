@@ -6,6 +6,7 @@ import LoginPage from '../pages/LoginPage/LoginPage';
 // 홈
 import HomePage from '../pages/HomePage/HomePage';
 import MyPage from '../pages/MyPage/MyPage';
+import Profile from '../pages/MyPage/Profile';
 
 export default function Router() {
   return (
@@ -15,6 +16,7 @@ export default function Router() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/home" element={<HomePage />} />
         <Route path="/my-page" element={<MyPage />} />
+        <Route path="/my-page/profile" element={<Profile />} />
       </Routes>
     </BrowserRouter>
   );
