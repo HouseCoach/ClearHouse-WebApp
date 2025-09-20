@@ -43,7 +43,7 @@ export default function MyPage() {
   return (
     <TopLayout title="마이페이지" icon={ringIcon}>
       {/* user profile */}
-      <div className="mb-[58px] flex justify-center">
+      <div className="mb-[58px] flex justify-center mt-[58px]">
         <Link to="profile" className="flex flex-col gap-[9px]">
           <img src={userIcon} alt="userIcon" className="w-[50px] h-[50px]" />
           <h1 className="text-[16px] text-gray-10">현사은</h1>
