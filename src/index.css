@@ -5,3 +5,13 @@
 body {
   font-family: 'Spoqa Han Sans Neo', sans-serif;
 }
+
+/* globals.css */
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE/Edge(레거시) */
+  scrollbar-width: none; /* Firefox */
+}
+.no-scrollbar::-webkit-scrollbar {
+  /* Chrome/Safari/Edge(Chromium) */
+  display: none;
+}
