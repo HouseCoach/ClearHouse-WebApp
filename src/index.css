@@ -15,3 +15,94 @@ body {
   /* Chrome/Safari/Edge(Chromium) */
   display: none;
 }
+
+/* ===== Range 슬라이더 공통 (Tailwind 전용 커스텀) ===== */
+@layer components {
+  /* 네이티브 트랙은 숨기고, 우리가 만든 트랙 위에 손잡이만 올린다 */
+  .tw-range {
+    @apply appearance-none absolute left-0 right-0 w-full bg-transparent;
+    top: -10px; /* 손잡이 수직 정렬(브라우저별로 -9~-11px 정도 미세조정) */
+    pointer-events: none; /* 트랙 클릭 방지, thumb만 드래그 */
+  }
+
+  /* WebKit thumb */
+  .tw-range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    pointer-events: auto; /* 드래그 가능 */
+    width: 22px;
+    height: 22px;
+    border-radius: 9999px;
+    background: #fff;
+    border: none;
+    box-shadow: 0 0 0 4px #fff, /* 흰색 링 */ 0 2px 6px rgba(0, 0, 0, 0.1),
+      /* 그림자 */ 0 0 0 6px rgba(23, 50, 200, 0.08); /* 아주 옅은 바깥광 */
+  }
+  .tw-range::-webkit-slider-runnable-track {
+    background: transparent;
+    height: 8px;
+  }
+
+  /* Firefox */
+  .tw-range::-moz-range-thumb {
+    pointer-events: auto;
+    width: 22px;
+    height: 22px;
+    border-radius: 9999px;
+    background: #fff;
+    border: none;
+    box-shadow: 0 0 0 4px #fff, 0 2px 6px rgba(0, 0, 0, 0.1),
+      0 0 0 6px rgba(23, 50, 200, 0.08);
+  }
+  .tw-range::-moz-range-track {
+    background: transparent;
+    height: 8px;
+  }
+}
+
+/* 차트 */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===== Range thumb 커스텀 (Tailwind @layer) ===== */
+@layer components {
+  .tw-range {
+    @apply appearance-none bg-transparent;
+    pointer-events: none; /* 트랙 클릭 방지, thumb만 드래그 */
+  }
+  /* WebKit */
+  .tw-range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    pointer-events: auto; /* 드래그 가능 */
+    width: 15px;
+    height: 15px;
+    margin-top: 5px;
+    border-radius: 9999px;
+    background: #fafaff;
+    border: none;
+    box-shadow: 0px 2px 3px 0px rgba(18, 41, 164, 0.2);
+    cursor: pointer;
+  }
+  .tw-range::-webkit-slider-runnable-track {
+    background: transparent;
+    height: 8px;
+  }
+
+  /* Firefox */
+  .tw-range::-moz-range-thumb {
+    pointer-events: auto;
+    width: 20px;
+    height: 20px;
+    border-radius: 9999px;
+    background: #fafaff;
+    border: none;
+    box-shadow: 0 0 0 4px #fff, 0 2px 6px rgba(0, 0, 0, 0.1),
+      0 0 0 6px rgba(18, 41, 164, 0.08);
+  }
+  .tw-range::-moz-range-track {
+    background: transparent;
+    height: 8px;
+  }
+}

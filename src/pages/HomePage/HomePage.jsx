@@ -149,14 +149,17 @@ export default function HomePage() {
                 />
               </Link>
             ))}
-            <button className="text-[16px] text-primary font-medium w-[327px] h-[45px] rounded-[5px] shadow-[0_2px_4px_0_rgba(18,41,164,0.05)] bg-white flex items-center justify-center gap-[6px]">
-              다른조건으로 검색하기
+            <Link
+              to="/home/another-condition-page"
+              className="text-[16px] text-primary font-medium w-[327px] h-[45px] rounded-[5px] shadow-[0_2px_4px_0_rgba(18,41,164,0.05)] bg-white flex items-center justify-center gap-[6px]"
+            >
+              다른 조건으로 검색하기
               <img
                 src={searchIcon}
                 className="w-[20px] h-[20px]"
                 alt="searchIcon"
               />
-            </button>
+            </Link>
           </div>
         </div>
         {/* 검증 매물 */}
