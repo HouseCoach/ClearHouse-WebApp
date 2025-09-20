@@ -2,9 +2,8 @@ import { useEffect, useMemo, useState } from 'react';
 
 const PRICE_LABELS = [0, 5, 10, 15, 20, 30, 50];
 const MAX_INDEX = PRICE_LABELS.length - 1; // 6
-
 export default function NoSelectDepositChart({
-  values,
+  values = [0, 50],
   onValuesChangeFinish = () => {},
 }) {
   // RN과 동일한 인덱스 계산

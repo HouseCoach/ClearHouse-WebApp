@@ -1,5 +1,6 @@
 import { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Footer from '../../components/layout/Footer';
 import anotherIcon from '../../assets/Map/another-condition.png';
 import searchIcon from '../../assets/Map/search-icon.png';
@@ -168,7 +169,7 @@ export default function MapPage() {
         </div>
         {/* Filter */}
         <div
-          className="flex gap-[7px] absolute top-[128px] left-[24px] no-scrollbar  overflow-x-auto w-[351px]"
+          className="flex gap-[7px] absolute top-[128px] left-[24px] no-scrollbar  overflow-x-auto w-[351px] pb-[15px]"
           ref={sliderRef}
           onMouseDown={onMouseDown}
           onMouseLeave={onMouseLeave}
@@ -180,7 +181,9 @@ export default function MapPage() {
             <button
               key={item.title}
               className={`shrink-0 text-primary px-[17px] py-[4px] rounded-[10px] text-[14px] border-[1px] ${
-                item.title === '매물 타입' ? 'bg-[#FAFAFF]' : ''
+                item.title === '매물 타입'
+                  ? 'border-transparent bg-[#FAFAFF]'
+                  : ''
               } ${
                 item.title === filter
                   ? 'border-primary bg-[#fafaff]'
@@ -319,9 +322,12 @@ export default function MapPage() {
         </div>
         {/* button */}
         <div>
-          <button className="w-[302px] h-[60px] text-[18px] bg-primary text-white rounded-[16px] mx-[37px] absolute bottom-[25px]">
+          <Link
+            to="/home/map/property-list"
+            className="w-[302px] h-[60px] text-[18px] bg-primary text-white rounded-[16px] mx-[37px] absolute bottom-[25px] flex justify-center items-center"
+          >
             이 동네 매물보기
-          </button>
+          </Link>
         </div>
       </div>
       <Footer />

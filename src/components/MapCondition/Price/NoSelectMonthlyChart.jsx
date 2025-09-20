@@ -4,7 +4,7 @@ const PRICE_LABELS = [0, 30, 50, 70, 100, 150, 200];
 const MAX_INDEX = PRICE_LABELS.length - 1; // 6
 
 export default function NoSelectMonthlyChart({
-  values,
+  values = [0, 200],
   onValuesChangeFinish = () => {},
 }) {
   // RN과 동일한 인덱스 계산

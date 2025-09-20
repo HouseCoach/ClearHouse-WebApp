@@ -8,6 +8,7 @@ import HomePage from '../pages/HomePage/HomePage';
 import AnotherConditionPage from '../pages/HomePage/AnotherConditionPage/AnotherConditionPage';
 // 지도
 import KakaoMap from '../pages/MapPage/MapPage';
+import PropertyListPage from '../pages/MapPage/PropertyListPage';
 // 마이페이지
 import MyPage from '../pages/MyPage/MyPage';
 import Profile from '../pages/MyPage/Profile';
@@ -24,6 +25,7 @@ export default function Router() {
           element={<AnotherConditionPage />}
         />
         <Route path="home/map" element={<KakaoMap />} />
+        <Route path="home/map/property-list" element={<PropertyListPage />} />
         <Route path="/my-page" element={<MyPage />} />
         <Route path="/my-page/profile" element={<Profile />} />
       </Routes>
