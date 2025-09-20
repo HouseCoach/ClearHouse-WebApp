@@ -6,6 +6,8 @@ import LoginPage from '../pages/LoginPage/LoginPage';
 // 홈
 import HomePage from '../pages/HomePage/HomePage';
 import AnotherConditionPage from '../pages/HomePage/AnotherConditionPage/AnotherConditionPage';
+// 지도
+import KakaoMap from '../pages/MapPage/MapPage';
 // 마이페이지
 import MyPage from '../pages/MyPage/MyPage';
 import Profile from '../pages/MyPage/Profile';
@@ -21,6 +23,7 @@ export default function Router() {
           path="/home/another-condition-page"
           element={<AnotherConditionPage />}
         />
+        <Route path="home/map" element={<KakaoMap />} />
         <Route path="/my-page" element={<MyPage />} />
         <Route path="/my-page/profile" element={<Profile />} />
       </Routes>

@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 const FLOOR = [
   {
     title: '반지층',
@@ -18,23 +17,20 @@ const FLOOR = [
   },
 ];
 
-export default function Floor({ resetTick }) {
-  const [state, setState] = useState([]);
-  useEffect(() => {
-    setState([]);
-  }, [resetTick]);
+export default function Floor({ floor, setFloor }) {
   return (
     <div className="flex gap-[12px]">
       {FLOOR.map((item) => {
-        const selected = state.includes(item.value);
+        const selected = floor.includes(item.value);
         return (
           <button
+            key={item.value}
             onClick={() => {
-              setState((prev) =>
+              setFloor((prev) =>
                 prev.includes(item.value) ? [] : [item.value]
               );
             }}
-            className={`text-[14px] font-normal text-[#1A1a1a} ${
+            className={`text-[14px] font-normal ${
               selected ? 'text-primary underline' : 'text-[#1a1a1a]'
             }`}
           >
