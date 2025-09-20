@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import SaleChart from './Price/SaleChart';
 import JeonseChart from './Price/JeonseChart';
 import MonthlyChart from './Price/MonthlyChart';
