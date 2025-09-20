@@ -11,11 +11,9 @@ import Floor from '../../../components/MapCondition/Floor';
 import Room from '../../../components/MapCondition/Room';
 import Bathroom from '../../../components/MapCondition/Bathroom';
 export default function AnotherConditionPage() {
-  const [resetTick, setResetTick] = useState(0);
   const [txnType, setTxnType] = useState([]);
   const handleResetAll = () => {
     setTxnType([]);
-    setResetTick((t) => t + 1);
   };
   const navigate = useNavigate();
   return (
@@ -27,7 +25,7 @@ export default function AnotherConditionPage() {
             <h1 className="text-[16px] font-medium text-[#1a1a1a] mb-[12px]">
               매물 타입
             </h1>
-            <PropertyType resetTick={resetTick} />
+            <PropertyType />
           </div>
           {/* 거래 유형 */}
           <div className="border border-white border-b-[5px] p-[24px]">
@@ -41,35 +39,35 @@ export default function AnotherConditionPage() {
             <h1 className="text-[16px] font-medium text-[#1a1a1a] mb-[13px]">
               가격
             </h1>
-            <Price txnType={txnType} resetTick={resetTick} />
+            <Price txnType={txnType} />
           </div>
           {/* 평형 */}
           <div className="border border-white border-b-[5px] p-[24px]">
             <h1 className="text-[16px] font-medium text-[#1a1a1a] mb-[12px]">
               평형
             </h1>
-            <Area resetTick={resetTick} />
+            <Area />
           </div>
           {/* 층 */}
           <div className="border border-white border-b-[5px] p-[24px]">
             <h1 className="text-[16px] font-medium text-[#1a1a1a] mb-[12px]">
               층
             </h1>
-            <Floor resetTick={resetTick} />
+            <Floor />
           </div>
           {/* 방 갯수 */}
           <div className="border border-white border-b-[5px] p-[24px]">
             <h1 className="text-[16px] font-medium text-[#1a1a1a] mb-[12px]">
               방 갯수
             </h1>
-            <Room resetTick={resetTick} />
+            <Room />
           </div>
           {/* 화장실 */}
           <div className="p-[24px] mb-[14px]">
             <h1 className="text-[16px] font-medium text-[#1a1a1a] mb-[12px]">
               화장실 갯수
             </h1>
-            <Bathroom resetTick={resetTick} />
+            <Bathroom />
           </div>
           <div className="flex gap-[9px] px-[24px]">
             <button

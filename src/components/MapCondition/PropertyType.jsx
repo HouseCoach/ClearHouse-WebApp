@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 const PROPERTY_TYPE = [
   {
     title: '빌라',
@@ -14,11 +14,9 @@ const PROPERTY_TYPE = [
   },
 ];
 
-export default function PropertyType({ resetTick }) {
+export default function PropertyType() {
   const [state, setState] = useState([]);
-  useEffect(() => {
-    setState([]);
-  }, [resetTick]);
+
   return (
     <div className="flex gap-[12px]">
       {PROPERTY_TYPE.map((item) => {
@@ -30,7 +28,7 @@ export default function PropertyType({ resetTick }) {
                 prev.includes(item.title) ? [] : [item.title]
               );
             }}
-            className={`text-[14px] font-normal text-[#1A1a1a} ${
+            className={`text-[14px] font-normal ${
               selected ? 'text-primary underline' : 'text-[#1a1a1a]'
             }`}
           >

@@ -20,12 +20,13 @@ export default function TransactionType({ txnType, setTxnType }) {
         const selected = txnType.includes(item.value);
         return (
           <button
+            key={item.value}
             onClick={() => {
               setTxnType((prev) =>
                 prev.includes(item.value) ? [] : [item.value]
               );
             }}
-            className={`text-[14px] font-normal text-[#1A1a1a} ${
+            className={`text-[14px] font-normal ${
               selected ? 'text-primary underline' : 'text-[#1a1a1a]'
             }`}
           >

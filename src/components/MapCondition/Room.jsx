@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 const ROOM = [
   {
     title: '1개',
@@ -18,23 +17,20 @@ const ROOM = [
   },
 ];
 
-export default function Room({ resetTick }) {
-  const [state, setState] = useState([]);
-  useEffect(() => {
-    setState([]);
-  }, [resetTick]);
+export default function Room({ room, setRoom }) {
   return (
     <div className="flex gap-[12px]">
       {ROOM.map((item) => {
-        const selected = state.includes(item.value);
+        const selected = room.includes(item.value);
         return (
           <button
+            key={item.value}
             onClick={() => {
-              setState((prev) =>
+              setRoom((prev) =>
                 prev.includes(item.value) ? [] : [item.value]
               );
             }}
-            className={`text-[14px] font-normal text-[#1A1a1a} ${
+            className={`text-[14px] font-normal ${
               selected ? 'text-primary underline' : 'text-[#1a1a1a]'
             }`}
           >
