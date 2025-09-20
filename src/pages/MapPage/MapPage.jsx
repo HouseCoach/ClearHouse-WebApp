@@ -218,12 +218,7 @@ export default function MapPage() {
             )}
             {filter === '가격' && (
               <div className="flex justify-center relative">
-                <Price
-                  txnType={txnType}
-                  price={price}
-                  setPrice={setPrice}
-                  defaults={PRICE_DEFAULTS}
-                />
+                <Price txnType={txnType} price={price} setPrice={setPrice} />
                 <button
                   onClick={() => setPrice({ ...PRICE_DEFAULTS })}
                   className="text-[10px] text-[#666666] font-normal absolute right-0 bottom-0 flex items-center gap-[3px]"

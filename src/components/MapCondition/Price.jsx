@@ -6,13 +6,10 @@ import MonthlyDespositChart from './Price/MonthlyDespositChart';
 import NoSelectDepositChart from './Price/NoSelectDepositChart';
 import NoSelectMonthlyChart from './Price/NoSelectMonthlyChart';
 
-export default function Price({ txnType, price, setPrice, defaults }) {
+export default function Price({ txnType, price, setPrice }) {
   const update = (key, nextRange) => {
     setPrice((prev) => ({ ...prev, [key]: nextRange }));
   };
-
-  const noType = txnType.length === 0;
-  const type = txnType[0];
 
   return (
     <div>

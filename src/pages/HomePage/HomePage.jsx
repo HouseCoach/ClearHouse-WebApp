@@ -21,22 +21,22 @@ const HOME_TYPE = [
   {
     title: '빌라',
     icon: billaIcon,
-    to: '/billa',
+    to: '/home/map',
   },
   {
     title: '오피스텔',
     icon: opiIcon,
-    to: '/opi',
+    to: '/home/map',
   },
   {
     title: '아파트',
     icon: aptIcon,
-    to: '/apt',
+    to: '/home/map',
   },
   {
     title: '주택',
     icon: juIcon,
-    to: '/ju',
+    to: '/home/map',
   },
 ];
 
@@ -136,6 +136,7 @@ export default function HomePage() {
           <div className="grid grid-cols-2 px-[24px] gap-[12px]">
             {HOME_TYPE.map((item) => (
               <Link
+                to={item.to}
                 key={item.title}
                 className="w-[157px] h-[96px] bg-white rounded-[5px] p-[12px] shadow-[0_2px_4px_0_rgba(18,41,164,0.05)] flex flex-col"
               >
