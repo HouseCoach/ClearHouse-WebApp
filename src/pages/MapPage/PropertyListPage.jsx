@@ -211,7 +211,7 @@ export default function PropertyListPage() {
     <div>
       <TopLayout title="이 동네 매물 목록">
         <div className="relative h-[615px]">
-          <div className="absolute">
+          <div className="relative">
             <div
               className="flex gap-[7px] absolute left-[24px] no-scrollbar  overflow-x-auto w-[351px] pb-[15px]"
               ref={sliderRef}
