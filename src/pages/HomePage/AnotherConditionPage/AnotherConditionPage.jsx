@@ -27,7 +27,6 @@ export default function AnotherConditionPage() {
   const [floor, setFloor] = useState([]); // 층
   const [bathroom, setBathroom] = useState([]); // 화장실 갯수
   const [room, setRoom] = useState([]);
-  const [filter, setFilter] = useState('');
   const handleResetAll = () => {
     setTxnType([]);
     setPrice({ ...PRICE_DEFAULTS });
