@@ -8,6 +8,7 @@ import KakaoMap from '../../components/Map/KakaoMap';
 import rurlerIcon from '../../assets/Map/rurler-icon.png';
 import locationIcon from '../../assets/Map/location-icon.png';
 import resetIcon from '../../assets/Map/reset-icon.png';
+import DistanceModal from './DistanceModal';
 
 // filter
 import TransactionType from '../../components/MapCondition/TransactionType';
@@ -57,6 +58,7 @@ export default function MapPage() {
   const [bathroom, setBathroom] = useState([]); // 화장실 갯수
   const [room, setRoom] = useState([]);
   const [filter, setFilter] = useState('');
+  const [modalOpen, setModalOpen] = useState(false);
 
   const isSelected = (title) => {
     switch (title) {
@@ -304,7 +306,10 @@ export default function MapPage() {
 
         {/* ruler & location */}
         <div className="w-[41px] h-[84px] bg-[#ffffff9f] rounded-[10px] flex flex-col items-center gap-[10px] absolute top-[275px] right-[24px]">
-          <button className="flex items-center mt-[10px]">
+          <button
+            onClick={() => setModalOpen(true)}
+            className="flex items-center mt-[10px]"
+          >
             <img
               src={rurlerIcon}
               alt="rurlerIcon"
@@ -320,6 +325,10 @@ export default function MapPage() {
             />
           </button>
         </div>
+        <DistanceModal
+          modalOpen={modalOpen}
+          next={() => navigate('/home/map/distance')}
+        />
         {/* button */}
         <div>
           <Link
