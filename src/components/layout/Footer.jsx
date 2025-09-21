@@ -20,12 +20,14 @@ const TAP = [
     inactiveIcon: inactiveChatIcon,
     activeIcon: activePersonIcon,
     to: '/chat',
+    activeWhen: ['/chat/*'],
   },
   {
     title: 'person',
     inactiveIcon: inactivePersonIcon,
     activeIcon: activePersonIcon,
     to: '/my-page',
+    activeWhen: ['/my-page/*'],
   },
 ];
 
@@ -35,7 +37,7 @@ export default function Footer() {
   // ✅ 아주 직관적인 경로 매칭
   const pathMatches = (pattern, pathname) => {
     if (pattern.endsWith('/*')) {
-      const base = pattern.slice(0, -2); // '/home/*' -> '/home'
+      const base = pattern.slice(0, -2);
       return pathname === base || pathname.startsWith(base + '/');
     }
     return pathname === pattern;

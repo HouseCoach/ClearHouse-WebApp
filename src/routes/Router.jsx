@@ -12,6 +12,8 @@ import PropertyListPage from '../pages/MapPage/PropertyListPage';
 // 마이페이지
 import MyPage from '../pages/MyPage/MyPage';
 import Profile from '../pages/MyPage/Profile';
+import SavedRoomPage from '../pages/MyPage/SavedRoomPage';
+import ChattingRoomPage from '../pages/MyPage/ChattingRoomPage';
 
 export default function Router() {
   return (
@@ -26,8 +28,11 @@ export default function Router() {
         />
         <Route path="home/map" element={<KakaoMap />} />
         <Route path="home/map/property-list" element={<PropertyListPage />} />
+        {/* mypage */}
         <Route path="/my-page" element={<MyPage />} />
         <Route path="/my-page/profile" element={<Profile />} />
+        <Route path="/my-page/saved-room" element={<SavedRoomPage />} />
+        <Route path="/my-page/chatting-room" element={<ChattingRoomPage />} />
       </Routes>
     </BrowserRouter>
   );

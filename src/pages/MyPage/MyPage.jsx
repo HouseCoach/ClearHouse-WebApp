@@ -12,12 +12,12 @@ const MAIN_LINK = [
   {
     title: '찜한 방',
     icon: heartIcon,
-    to: '/my-page/liked-home',
+    to: '/my-page/saved-room',
   },
   {
     title: '문의한 방',
     icon: chatIcon,
-    to: '/my-page/chatting-home',
+    to: '/my-page/chatting-room',
   },
   {
     title: '내가 쓴 리뷰',
@@ -50,9 +50,13 @@ export default function MyPage() {
         </Link>
       </div>
       {/* main */}
-      <div className="h-[101px] mb-[35px] border-t-[2px] border-b-[2px] border-gray-2 flex px-[68px] justify-between py-[20px]">
+      <div className="h-[101px] mb-[35px] border-t-[2px] border-b-[2px] border-gray-2 flex px-[68px] justify-between py-[20px] items-center ">
         {MAIN_LINK.map((item, idx) => (
-          <Link key={idx} className="flex flex-col gap-[11px] items-center">
+          <Link
+            key={idx}
+            to={item.to}
+            className="flex flex-col gap-[11px] items-center w-[55px]"
+          >
             <img src={item.icon} alt="icon" className="w-[30px] h-[30px]" />
             <h1 className="text-[10px] text-gray-10">{item.title}</h1>
           </Link>
