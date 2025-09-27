@@ -146,7 +146,7 @@ export default function MapPage() {
   return (
     <div className="w-full">
       <div className="bg-slate-400 relative h-[721px]">
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 z-0">
           <KakaoMap />
         </div>
         <div className="w-[327px] h-[45px] bg-white rounded-[10px] py-[10px] px-[12px] flex items-center justify-between absolute top-[71px] left-[24px] ">

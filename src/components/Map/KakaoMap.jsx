@@ -10,7 +10,7 @@ export default function KakaoMap() {
     <div className="w-full">
       <Map
         center={{ lat: 33.450701, lng: 126.570667 }}
-        style={{ width: '1000px', height: '600px' }} // 높이 꼭 지정!
+        style={{ width: '375px', height: '721px' }} // 높이 꼭 지정!
         level={3}
       />
     </div>
